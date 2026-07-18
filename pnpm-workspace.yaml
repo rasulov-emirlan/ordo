@@ -8,3 +8,5 @@ onlyBuiltDependencies:
   - better-sqlite3
   - esbuild
   - sharp
+overrides:
+  postcss: ">=8.5.16"
