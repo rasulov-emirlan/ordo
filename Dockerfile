@@ -18,7 +18,9 @@ FROM base AS build
 ENV NEXT_TELEMETRY_DISABLED=1
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
-RUN pnpm build
+# Invoke Next directly — `pnpm build` triggers pnpm 11's deps-status check,
+# which aborts without a TTY.
+RUN node node_modules/next/dist/bin/next build
 
 # ---- runtime ----
 FROM base AS runtime
