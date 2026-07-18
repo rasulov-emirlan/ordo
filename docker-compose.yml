@@ -1,0 +1,24 @@
+services:
+  ordo:
+    build: .
+    container_name: ordo
+    restart: unless-stopped
+    environment:
+      - DB_PATH=/data/ordo.db
+      - TZ=Asia/Bishkek
+    volumes:
+      - ordo-data:/data
+    networks: [web]
+    labels:
+      - traefik.enable=true
+      - "traefik.http.routers.ordo.rule=Host(`ordo.night.enkiduck.com`)"
+      - traefik.http.routers.ordo.entrypoints=websecure
+      - traefik.http.routers.ordo.tls.certresolver=le
+      - traefik.http.services.ordo.loadbalancer.server.port=3000
+
+networks:
+  web:
+    external: true
+
+volumes:
+  ordo-data:
