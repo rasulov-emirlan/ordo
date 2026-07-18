@@ -71,6 +71,7 @@ export default async function DashboardPage() {
       <div className="grid-2 mt-1">
         <div className="card">
           <div className="kicker mb-1">Заведения сегодня</div>
+          <div className="table-wrap">
           <table className="table">
             <thead>
               <tr>
@@ -97,6 +98,7 @@ export default async function DashboardPage() {
               })}
             </tbody>
           </table>
+          </div>
         </div>
 
         <div className="card">

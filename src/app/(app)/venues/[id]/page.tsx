@@ -99,6 +99,7 @@ export default async function VenuePage({ params }: { params: Promise<{ id: stri
           {shifts.length === 0 ? (
             <p className="muted small">Сегодня смен нет.</p>
           ) : (
+            <div className="table-wrap">
             <table className="table">
               <thead>
                 <tr>
@@ -117,6 +118,7 @@ export default async function VenuePage({ params }: { params: Promise<{ id: stri
                 ))}
               </tbody>
             </table>
+            </div>
           )}
         </div>
 
