@@ -9,6 +9,7 @@ import "@fontsource/jetbrains-mono/500.css";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.APP_BASE_URL ?? "https://ordo.night.enkiduck.com"),
   title: "Ordo — управление сетью кофеен",
   description:
     "Персонал, смены, штрафы, камеры с видеоаналитикой, продажи и статистика — для владельцев кофеен и кафе в Кыргызстане и Центральной Азии.",
