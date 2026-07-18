@@ -97,10 +97,10 @@ export function SalesRegister({
         {categories.map(({ category, products: categoryProducts }) => (
           <section className="mb-1" key={category}>
             <h3>{category}</h3>
-            <div className="grid-3">
+            <div className="pos-grid">
               {categoryProducts.map((product) => (
                 <button
-                  className="card card--framed"
+                  className="pos-item"
                   key={product.id}
                   onClick={() => addProduct(product.id)}
                   type="button"

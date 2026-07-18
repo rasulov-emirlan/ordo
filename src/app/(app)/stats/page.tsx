@@ -165,6 +165,7 @@ export default async function StatsPage({
           {summary.paymentMix.length === 0 ? (
             <p className="muted small">За выбранный период оплат не было.</p>
           ) : (
+            <div className="table-wrap">
             <table className="table">
               <thead>
                 <tr>
@@ -187,6 +188,7 @@ export default async function StatsPage({
                 ))}
               </tbody>
             </table>
+            </div>
           )}
         </div>
       </div>
